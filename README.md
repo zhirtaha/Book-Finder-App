@@ -1,16 +1,9 @@
 # my_book_finder
 
-A new Flutter project.
+A flutter application for those who like books. In this app users can find and search for their favorite books, and find information about the books. this app uses one of the books API to get the books data.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- onBoarding screen
+- Search screen to search for books
+- Books details screen
