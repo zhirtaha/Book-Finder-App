@@ -7,3 +7,4 @@ A flutter application for those who like books. In this app users can find and s
 - onBoarding screen
 - Search screen to search for books
 - Books details screen
+- Home Screen
