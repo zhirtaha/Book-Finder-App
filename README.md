@@ -1,10 +1,13 @@
-# my_book_finder
+# My Book Finder
 
-A flutter application for those who like books. In this app users can find and search for their favorite books, and find information about the books. this app uses one of the books API to get the books data.
+# Project Description
+
+A flutter application for those who like books. In this app users can find and search for their favorite books, and find information about the books. this app uses Google Books API to get the books data.
 
 ## Features
 
-- onBoarding screen
-- Search screen to search for books
-- Books details screen
+- onBoarding Screen
+- Authentication
+- Search Screen to search for books
+- Books details Screen, Book's description, Book's Author, Books' image, And more.....
 - Home Screen
