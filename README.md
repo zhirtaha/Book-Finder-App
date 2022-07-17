@@ -7,7 +7,7 @@ A flutter application for those who like books. In this app users can find and s
 ## Features
 
 - onBoarding Screen
-- Authentication(Login and Signup)
+- Authentication (Login and Signup)
 - User's Favorite Books
 - Search Screen to search for books
 - Books details Screen, Book's description, Book's Author, Books' image, And more.....
