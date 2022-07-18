@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title:'Book finder' ,
       theme: lightTheme,
       debugShowCheckedModeBanner: false,
       home: OnBoardingScreen(),

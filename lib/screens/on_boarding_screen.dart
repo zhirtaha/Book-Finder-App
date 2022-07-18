@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_book_finder/layout/home_layout.dart';
+
 import 'package:my_book_finder/styles/colors/colors.dart';
+import 'package:my_book_finder/widgets/widgets.dart';
+
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingModel {
@@ -12,7 +16,7 @@ class OnBoardingModel {
 }
 
 class OnBoardingScreen extends StatefulWidget {
-  OnBoardingScreen({Key? key}) : super(key: key);
+  const OnBoardingScreen({Key? key}) : super(key: key);
 
   @override
   State<OnBoardingScreen> createState() => _OnBoardingScreenState();
@@ -87,42 +91,52 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           style: Theme.of(context).textTheme.headline1,
         ),
         SizedBox(
-          height: 15,
+          height: 20,
         ),
         Text(
           board.body,
           style: Theme.of(context).textTheme.bodyText1,
         ),
         SizedBox(
-          height: 15,
+          height: 20,
         ),
         SmoothPageIndicator(
-          effect: WormEffect(
-            activeDotColor: accentColor
-          ),
+          effect: WormEffect(activeDotColor: secondaryColor),
           controller: pageController,
           count: boarding.length,
         ),
         SizedBox(
-          height: 80,
+          height: 90,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                navigateAndFinish(context, HomeLayout());
+              },
               child: Text(
                 'Skip',
                 style: TextStyle(
-                  color: accentColor,
+                  color: secondaryColor,
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             FloatingActionButton(
-              backgroundColor: accentColor,
-              onPressed: () {},
+              backgroundColor: secondaryColor,
+              onPressed: () {
+                if (isLast) {
+                  setState(() {
+                    navigateAndFinish(context, HomeLayout());
+                  });
+                } else {
+                  pageController.nextPage(
+                      duration: Duration(milliseconds: 750),
+                      curve: Curves.easeInOut);
+                }
+              },
               child: Icon(Icons.arrow_forward),
             )
           ],
