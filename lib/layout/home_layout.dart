@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_book_finder/screens/categories_screen.dart';
+import 'package:my_book_finder/screens/home_screen.dart';
+import 'package:my_book_finder/screens/search_screen.dart';
 import 'package:my_book_finder/styles/colors/colors.dart';
 
 class HomeLayout extends StatefulWidget {
@@ -11,6 +14,11 @@ class HomeLayout extends StatefulWidget {
 
 class _HomeLayoutState extends State<HomeLayout> {
   int currentIndex = 0;
+  List bottomNavItems = [
+    HomeScreen(),
+    CategoriesScreen(),
+    SearchScreen()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +51,7 @@ class _HomeLayoutState extends State<HomeLayout> {
               label: 'Search', icon: FaIcon(FontAwesomeIcons.searchengin)),
         ],
       ),
+      body: bottomNavItems[currentIndex],
     );
   }
 }
