@@ -3,7 +3,7 @@ import 'package:my_book_finder/styles/colors/colors.dart';
 
 ThemeData lightTheme = ThemeData(
   fontFamily: 'Poppins',
-  primaryColor: primaryColor,
+  primaryColor: backgroundColor,
   textTheme: TextTheme(
     headline1: TextStyle(
       fontSize: 35.0,

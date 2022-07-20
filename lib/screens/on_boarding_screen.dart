@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_book_finder/layout/home_layout.dart';
-
+import 'package:my_book_finder/components/components.dart';
+import 'package:my_book_finder/layout/main_layout.dart';
 import 'package:my_book_finder/styles/colors/colors.dart';
-import 'package:my_book_finder/widgets/widgets.dart';
-
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingModel {
