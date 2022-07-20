@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_book_finder/layout/main_layout.dart';
 import 'package:my_book_finder/screens/on_boarding_screen.dart';
 import 'package:my_book_finder/styles/themes/themes.dart';
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
       title:'Book finder' ,
       theme: lightTheme,
       debugShowCheckedModeBanner: false,
-      home: OnBoardingScreen(),
+      home: MainLayout() ,
     );
   }
 }

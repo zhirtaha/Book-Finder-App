@@ -111,7 +111,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           children: [
             TextButton(
               onPressed: () {
-                navigateAndFinish(context, HomeLayout());
+                navigateAndFinish(context, MainLayout());
               },
               child: Text(
                 'Skip',
@@ -127,7 +127,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               onPressed: () {
                 if (isLast) {
                   setState(() {
-                    navigateAndFinish(context, HomeLayout());
+                    navigateAndFinish(context, MainLayout());
                   });
                 } else {
                   pageController.nextPage(
