@@ -13,8 +13,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final carouselImages = [
-    'https://images-na.ssl-images-amazon.com/images/I/61PJSnusanL.jpg',
-    'https://m.media-amazon.com/images/I/51Z0nLAfLmL.jpg',
+    'https://m.media-amazon.com/images/I/51Z0nLAfLmL.jpghttps://m.media-amazon.com/images/I/51Z0nLAfLmL.jpg',
+    'https://m.media-amazon.com/images/I/51UU0FLH1wL.jpg',
+    'https://images-na.ssl-images-amazon.com/images/I/81tCtHFtOgL.jpg',
     'https://images-na.ssl-images-amazon.com/images/I/61M1eEsuSML.jpg'
   ];
 
@@ -33,17 +34,20 @@ class _HomeScreenState extends State<HomeScreen> {
               style: Theme.of(context).textTheme.headline1,
             ),
             SizedBox(
-              height: 40,
+              height: 25,
             ),
             Text(
               'Find Your Favorite Book',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              style: TextStyle(
+                fontSize: 20, fontWeight: 
+                FontWeight.w500
+              ),
             ),
             Expanded(
               child: CarouselSlider.builder(
                 itemCount: carouselImages.length,
                 options: CarouselOptions(
-                    height: 350,
+                    height: 360,
                     enlargeCenterPage: true,
                     onPageChanged: ((index, reason) {
                       setState(() {

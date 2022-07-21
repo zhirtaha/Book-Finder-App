@@ -25,7 +25,7 @@ class _MainLayoutState extends State<MainLayout> {
     return Scaffold(
       appBar: AppBar(
       title: Text(
-          'Book Finder',
+          'My Book Finder',
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 //build carousel image items
 Widget buildCarouselImageItems(String carouselImage, int index) {
   return Container(
-    margin: EdgeInsets.symmetric(horizontal: 15),
+    width: 360,
+    margin: EdgeInsets.symmetric(horizontal: 10),
     color: Colors.grey,
     child: Image.network(
       carouselImage,
