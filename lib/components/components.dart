@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 
+//build books items 
+Widget buildBookGridItem() {
+  return Container();
+}
+
+//build categories List
+Widget buildCategoriesListItem() {
+  return Container();
+}
+
 //build carousel image items
 Widget buildCarouselImageItems(String carouselImage, int index) {
   return Container(

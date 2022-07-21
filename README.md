@@ -7,6 +7,7 @@ A Flutter application for those who like books. In this app users can find and s
 ## Features
 
 - Users can search for a book by (title, author,....etc)
+- Users can search for book by book subjects
 - List of Books based on a user's search
 - Book Details like (title, description,author,......etc)
-- Users can preview a book on a webview
+- Users can preview the book on a webview
