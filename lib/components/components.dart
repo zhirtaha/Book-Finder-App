@@ -28,7 +28,7 @@ Widget buildCategoriesListItem() {
 Widget buildCarouselImageItems(String carouselImage, int index) {
   return Container(
     width: 360,
-    margin: EdgeInsets.symmetric(horizontal: 10),
+    margin: EdgeInsets.symmetric(horizontal: 5),
     color: Colors.grey,
     child: Image.network(
       carouselImage,
@@ -61,6 +61,9 @@ Widget buildDefaultButton({
     ), 
     child: Text(
       text,
+      style: TextStyle(
+        fontWeight: FontWeight.bold
+      ),
     ),
   );
 }

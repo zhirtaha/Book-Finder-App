@@ -14,6 +14,7 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   TextEditingController searchController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,51 +23,56 @@ class _SearchScreenState extends State<SearchScreen> {
       child: Column(
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: Container(
                   padding: EdgeInsets.all(0.0),
-                  child: TextFormField(
-                    cursorColor: secondaryColor,
-                    style: TextStyle(
-                      color: accentColor,
-                    ),
-                    controller: searchController,
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(vertical: 16),
-                        hintText: 'Search for a book',
-                        prefixIcon: Icon(color: secondaryColor, Icons.search),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        focusedBorder: OutlineInputBorder(
+                  child: Form(
+                    key: formKey,
+                    child: TextFormField(
+                      cursorColor: secondaryColor,
+                      style: TextStyle(
+                        color: accentColor,
+                      ),
+                      controller: searchController,
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(vertical: 16),
+                          hintText: 'Search for a book',
+                          prefixIcon: Icon(color: secondaryColor, Icons.search),
+                          border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
-                            borderSide: BorderSide(color: secondaryColor))),
-                    validator: ((value) {
-                      if (value!.isEmpty) {
-                        return 'Search Must not be empty';
-                      }
-                      return null;
-                    }),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: BorderSide(color: secondaryColor))),
+                      validator: ((value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Search Must not be empty';
+                        }
+                        return null;
+                      }),
+                    ),
                   ),
                 ),
               ),
               SizedBox(
-                width: 15,
+                width: 25,
               ),
               Container(
                   height: 50.0,
-                  margin: EdgeInsets.all(0),
+                  margin: EdgeInsets.only(top: 3),
                   child: buildDefaultButton(
                     function: () {
-                      if (searchController.value.text.isEmpty) {
-                          return 'Search must not be empty';
-                        }
-                      setState(() {
-                        BookService.getBooksBySearch(
-                            searchController.value.text);
-                      });
+                      if (formKey.currentState!.validate()) {
+                        setState(() {
+                          BookService.getBooksBySearch(
+                              searchController.value.text);
+                        });
+                      } else {
+                        return 'Search Must Not be Empty';
+                      }
                       return null;
                     },
                     text: 'Search',
@@ -78,12 +84,14 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
           searchController.value.text == ''
               ? Container(
-                  margin: EdgeInsets.only(top: 200, right: 30),
+                  margin: EdgeInsets.only(
+                    top: 200,
+                  ),
                   child: Text(
                     textAlign: TextAlign.center,
                     'Please Search for a book to show',
                     style: TextStyle(
-                        fontSize: 22,
+                        fontSize: 25,
                         fontWeight: FontWeight.w600,
                         color: accentColor),
                   ),
