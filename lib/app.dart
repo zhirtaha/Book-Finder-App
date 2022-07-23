@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_book_finder/layout/main_layout.dart';
-import 'package:my_book_finder/screens/on_boarding_screen.dart';
+
 import 'package:my_book_finder/styles/themes/themes.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,10 +9,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title:'Book finder' ,
+      title:'My Book finder' ,
       theme: lightTheme,
       debugShowCheckedModeBanner: false,
-      home: MainLayout() ,
+      home:MainLayout() ,
     );
   }
 }

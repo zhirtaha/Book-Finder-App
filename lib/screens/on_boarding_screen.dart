@@ -23,15 +23,15 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   List boarding = [
     OnBoardingModel(
-        image: 'assets/images/onboard 1.png',
+        image: 'assets/images/onboard 1.jpg',
         body: 'Find The Books You Like',
         title: 'My Book Finder'),
     OnBoardingModel(
-        image: 'assets/images/onboard 2.png',
+        image: 'assets/images/onboard 2.jpg',
         body: 'The Collection You Will love',
         title: 'My Book Finder'),
     OnBoardingModel(
-        image: 'assets/images/onboard 3.png',
+        image: 'assets/images/onboard 3.jpg',
         body: 'Get The Right Books',
         title: 'My Book Finder'),
   ];
