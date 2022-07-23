@@ -239,7 +239,6 @@ class VolumeInfo {
 
     Map<String, dynamic> toJson() => {
         "title": title,
-        
         "publishedDate": publishedDate,
         "description": description,
         "readingModes": readingModes.toJson(),

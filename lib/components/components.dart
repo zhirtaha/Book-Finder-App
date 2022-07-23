@@ -1,60 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:my_book_finder/models/book_model.dart';
-import 'package:my_book_finder/services/book_api_service.dart';
 import 'package:my_book_finder/styles/colors/colors.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 //build books items
-Widget buildBookItem() {
+Widget buildBookItem(Item item) {
   return Container(
     padding: EdgeInsets.all(25.0),
-    child: FutureBuilder<BookModel>(
-      future: BookService.getBooks(),
-      builder: ((context, AsyncSnapshot snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return SpinKitWave(
-            itemBuilder: (BuildContext context, int index) {
-              return DecoratedBox(
-                decoration: BoxDecoration(
-                  color: accentColor,
-                ),
-              );
-            },
-          );
-        } else if (snapshot.hasError) {
-          return Text(snapshot.error.toString());
-        } else if (snapshot.data == null) {
-          return Text('There is No Data');
-        }
-        return GridView.builder(
-          itemCount: 10,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, mainAxisSpacing: 25.0, crossAxisSpacing: 25.0),
-          itemBuilder: (context, index) {
-            Item item = snapshot.data.items[index];
-            return Container(
-              padding: EdgeInsets.all(25.0),
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                      item.volumeInfo.imageLinks!.thumbnail.toString(),
-                    ),
-                  ),
-                  color: backgroundColor,
-                  borderRadius: BorderRadius.circular(10.0)),
-            );
-          },
-        );
-      }),
-    ),
+    decoration: BoxDecoration(
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: NetworkImage(
+            item.volumeInfo.imageLinks!.thumbnail.toString(),
+          ),
+        ),
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(10.0)),
   );
 }
 
-//build Search box item
-Widget buildSearchBoxItem() {
-  return Container();
-}
 
 //build categories List
 Widget buildCategoriesListItem() {
@@ -70,6 +33,34 @@ Widget buildCarouselImageItems(String carouselImage, int index) {
     child: Image.network(
       carouselImage,
       fit: BoxFit.cover,
+    ),
+  );
+}
+
+//default button
+Widget buildDefaultButton({
+  double height = 50.0,
+  double padding = 16.0,
+  required Color backgroundColor,
+  required Color shadowColor,
+  required Color textColor,
+  double radius = 15.0,
+  required String? Function() function,
+  required String text,
+}) {
+  return ElevatedButton(
+    onPressed: function,
+    style: ElevatedButton.styleFrom(
+      onPrimary: textColor,
+        primary: backgroundColor,
+        padding: EdgeInsets.all(padding),
+        shadowColor: shadowColor,
+        shape: RoundedRectangleBorder(
+         borderRadius: BorderRadius.circular(radius)
+     ),
+    ), 
+    child: Text(
+      text,
     ),
   );
 }
