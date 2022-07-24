@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:my_book_finder/components/components.dart';
-import 'package:my_book_finder/models/book_model.dart';
-import 'package:my_book_finder/services/book_api_service.dart';
-import 'package:my_book_finder/styles/colors/colors.dart';
+import 'package:my_book_finder/src/components/components.dart';
+import 'package:my_book_finder/src/models/book_model.dart';
+import 'package:my_book_finder/src/services/book_api_service.dart';
+import 'package:my_book_finder/src/styles/colors/colors.dart';
+
 
 
 class BooksListScreen extends StatelessWidget {
@@ -32,9 +33,11 @@ class BooksListScreen extends StatelessWidget {
           return Text('There is No Data');
         }
         return GridView.builder(
-          itemCount: 10,
+          itemCount: snapshot.data.items.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, mainAxisSpacing: 25.0, crossAxisSpacing: 25.0),
+            crossAxisCount: 2, 
+            mainAxisSpacing: 25.0, 
+            crossAxisSpacing: 25.0),
           itemBuilder: (context, index) {
             Item item = snapshot.data.items[index];
             return buildBookItem(item);

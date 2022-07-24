@@ -183,6 +183,7 @@ class VolumeInfo {
     VolumeInfo({
         required this.title,
          required this.authors,
+          this.publisher,
          this.publishedDate,
         required this.description,
         required this.readingModes,
@@ -192,7 +193,6 @@ class VolumeInfo {
         required this.maturityRating,
         required this.allowAnonLogging,
         required this.contentVersion,
-        
          this.imageLinks,
         required this.language,
         required this.previewLink,
@@ -201,6 +201,7 @@ class VolumeInfo {
     });
 
     String title;
+    String? publisher;
     List<String>? authors;
     String? publishedDate;
     String description;
@@ -211,7 +212,6 @@ class VolumeInfo {
     String maturityRating;
     bool allowAnonLogging;
     String contentVersion;
-
     ImageLinks? imageLinks;
     String language;
     String previewLink;
@@ -220,6 +220,7 @@ class VolumeInfo {
 
     factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
         title: json["title"],
+        publisher: json["publisher"] ?? "",
         authors: List<String>.from(json['authors'] ?? []) ,
         publishedDate: json["publishedDate"],
         description: json["description"]?? "",
@@ -239,6 +240,7 @@ class VolumeInfo {
 
     Map<String, dynamic> toJson() => {
         "title": title,
+        "publisher":publisher,
         "publishedDate": publishedDate,
         "description": description,
         "readingModes": readingModes.toJson(),
@@ -265,8 +267,8 @@ class ImageLinks {
     String? thumbnail;
 
     factory ImageLinks.fromJson(Map<String, dynamic> json) => ImageLinks(
-        smallThumbnail: json["smallThumbnail"],
-        thumbnail: json["thumbnail"],
+        smallThumbnail: json["smallThumbnail"] ?? "",
+        thumbnail: json["thumbnail"] ?? "",
     );
 
     Map<String, dynamic> toJson() => {

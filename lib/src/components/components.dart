@@ -1,23 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:my_book_finder/models/book_model.dart';
-import 'package:my_book_finder/styles/colors/colors.dart';
+import 'package:my_book_finder/src/models/book_model.dart';
+import 'package:my_book_finder/src/styles/colors/colors.dart';
+
 
 //build books items
 Widget buildBookItem(Item item) {
-  return Container(
-    padding: EdgeInsets.all(25.0),
-    decoration: BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: NetworkImage(
-            item.volumeInfo.imageLinks!.thumbnail.toString(),
-          ),
-        ),
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(10.0)),
+  return GridTile(
+    footer: Container(
+      padding: EdgeInsets.all(5),
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: backgroundColor.withOpacity(0.8),
+        
+      ),
+      height: 45,
+      child: Text(
+        textAlign: TextAlign.center,
+        item.volumeInfo.title,
+        style: TextStyle(
+            overflow: TextOverflow.ellipsis,
+            fontSize: 16,
+            fontWeight: FontWeight.bold),
+      ),
+    ),
+    child: Image.network(
+      item.volumeInfo.imageLinks!.thumbnail.toString(),
+      fit: BoxFit.cover,
+      errorBuilder: (context, error, stackTrace) {
+        return Placeholder();
+      },
+    ),
   );
 }
-
 
 //build categories List
 Widget buildCategoriesListItem() {
@@ -52,18 +66,15 @@ Widget buildDefaultButton({
     onPressed: function,
     style: ElevatedButton.styleFrom(
       onPrimary: textColor,
-        primary: backgroundColor,
-        padding: EdgeInsets.all(padding),
-        shadowColor: shadowColor,
-        shape: RoundedRectangleBorder(
-         borderRadius: BorderRadius.circular(radius)
-     ),
-    ), 
+      primary: backgroundColor,
+      padding: EdgeInsets.all(padding),
+      shadowColor: shadowColor,
+      shape:
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
+    ),
     child: Text(
       text,
-      style: TextStyle(
-        fontWeight: FontWeight.bold
-      ),
+      style: TextStyle(fontWeight: FontWeight.bold),
     ),
   );
 }

@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:my_book_finder/app.dart';
+import 'package:my_book_finder/src/app.dart';
 
 
 void main() {

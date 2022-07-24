@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_book_finder/styles/colors/colors.dart';
+import 'package:my_book_finder/src/styles/colors/colors.dart';
 
 ThemeData lightTheme = ThemeData(
   scaffoldBackgroundColor: Colors.white,
@@ -27,6 +27,12 @@ ThemeData lightTheme = ThemeData(
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     elevation: 15.0,
+    selectedIconTheme: IconThemeData(
+      size: 35.0
+    ),
+    unselectedIconTheme: IconThemeData(
+      size: 30.0
+    ),
     unselectedItemColor: Colors.grey[600],
     type: BottomNavigationBarType.fixed,
     backgroundColor: backgroundColor,
