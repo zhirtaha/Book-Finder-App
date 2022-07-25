@@ -27,15 +27,9 @@ ThemeData lightTheme = ThemeData(
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     elevation: 15.0,
-    selectedIconTheme: IconThemeData(
-      size: 35.0
-    ),
-    unselectedIconTheme: IconThemeData(
-      size: 30.0
-    ),
     unselectedItemColor: Colors.grey[600],
+    selectedItemColor: secondaryColor,
     type: BottomNavigationBarType.fixed,
     backgroundColor: backgroundColor,
-    selectedItemColor: secondaryColor,
   ),
 );

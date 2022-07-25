@@ -66,12 +66,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   alignment: Alignment.centerLeft,
                   child: IconButton(
                     onPressed: () {
-                      setState(() {
-                        // Use the controller to change the current page
+                      setState(() {     
                       carouselController.previousPage();
                       });
                     },
-                    icon: Icon(Icons.arrow_back),
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: secondaryColor,
+                    ),
                   ),
                 ),
                 Align(
@@ -79,11 +81,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: IconButton(
                     onPressed: () {
                       setState(() {
-                        // Use the controller to change the current page
                       carouselController.nextPage();
                       });
                     },
-                    icon: Icon(Icons.arrow_forward),
+                    icon: Icon(
+                      Icons.arrow_forward,
+                      color: secondaryColor,
+                    ),
                   ),
                 ),
               ]),

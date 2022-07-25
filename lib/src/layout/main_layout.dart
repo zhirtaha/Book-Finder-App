@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_book_finder/src/screens/books_list_screen.dart';
 import 'package:my_book_finder/src/screens/home_screen.dart';
 import 'package:my_book_finder/src/screens/categories_screen.dart';
@@ -38,13 +39,15 @@ class _MainLayoutState extends State<MainLayout> {
         },
         items: [
           BottomNavigationBarItem(
-              label: 'Home', icon: Icon(Icons.home)),
+              // ignore: deprecated_member_use
+              label: 'Home', icon: FaIcon(FontAwesomeIcons.home)),
                BottomNavigationBarItem(
-              label: 'Books', icon: Icon(Icons.book)),
+              label: 'Books', icon: FaIcon(FontAwesomeIcons.book)),
           BottomNavigationBarItem(
-              label: 'Categories', icon: Icon(Icons.list)),
+              label: 'Categories', icon: FaIcon(FontAwesomeIcons.list)),
           BottomNavigationBarItem(
-              label: 'Search', icon: Icon(Icons.search)),
+              // ignore: deprecated_member_use
+              label: 'Search', icon: FaIcon(FontAwesomeIcons.search)),
         ],
       ),
       body: bottomNavItems[currentIndex],
