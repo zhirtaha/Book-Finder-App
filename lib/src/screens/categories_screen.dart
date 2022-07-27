@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_book_finder/src/models/book_model.dart';
-import 'package:my_book_finder/src/services/book_api_service.dart';
+import 'package:my_book_finder/src/components/components.dart';
+import 'package:my_book_finder/src/screens/books_by_category_screen.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
 
 class CategoriesModel {
@@ -17,11 +17,13 @@ class CategoriesScreen extends StatelessWidget {
   CategoriesScreen({Key? key}) : super(key: key);
 
   List<CategoriesModel> categoriesModel = [
-    CategoriesModel(image: 'assets/images/art.png', title: 'ART'),
+    CategoriesModel(image: 'assets/images/art.png', title: 'DESIGN'),
     CategoriesModel(image: 'assets/images/criticism.png', title: 'CRITICISM'),
     CategoriesModel(image: 'assets/images/fiction.png', title: 'FICTION'),
     CategoriesModel(image: 'assets/images/history.png', title: 'HISTORY'),
+    CategoriesModel(image: 'assets/images/law.png', title: 'LAW'),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,15 +38,17 @@ class CategoriesScreen extends StatelessWidget {
         },
         itemBuilder: (context, index) {
           return ListTile(
-          textColor: accentColor,
-          iconColor: secondaryColor,
-          tileColor:backgroundColor,
-           leading: Image.asset(categoriesModel[index].image),
-           title: Text(categoriesModel[index].title),
-           trailing: IconButton(
-            onPressed: (){},
-            icon: Icon(Icons.arrow_forward),
-           ),
+            textColor: accentColor,
+            iconColor: secondaryColor,
+            tileColor: backgroundColor,
+            leading: Image.asset(categoriesModel[index].image),
+            title: Text(categoriesModel[index].title),
+            trailing: IconButton(
+              onPressed: () {
+                navigateTo(context, BooksByCategoryScreen(category: categoriesModel[index].title));
+              },
+              icon: Icon(Icons.arrow_forward),
+            ),
           );
         },
       ),

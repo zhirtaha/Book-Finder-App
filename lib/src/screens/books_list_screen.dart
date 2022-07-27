@@ -16,33 +16,25 @@ class BooksListScreen extends StatelessWidget {
         future: BookService.getBooks(),
         builder: ((context, AsyncSnapshot snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return SpinKitWave(
-              itemBuilder: (BuildContext context, int index) {
-                return DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: accentColor,
-                  ),
-                );
-              },
+            return SpinKitPouringHourGlassRefined(
+              color: accentColor,
+              size: 70.0,
             );
           } else if (snapshot.hasError) {
             return Text(snapshot.error.toString());
           } else if (snapshot.data == null) {
             return Text('There is No Data');
           }
-          return GestureDetector(
-            onTap: () {},
-            child: GridView.builder(
-              itemCount: snapshot.data.items.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 25.0,
-                  crossAxisSpacing: 25.0),
-              itemBuilder: (context, index) {
-                Item item = snapshot.data.items[index];
-                return buildBookItem(item,context);
-              },
-            ),
+          return GridView.builder(
+            itemCount: snapshot.data.items.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 25.0,
+                crossAxisSpacing: 25.0),
+            itemBuilder: (context, index) {
+              Item item = snapshot.data.items[index];
+              return buildBookItem(item,context);
+            },
           );
         }),
       ),
