@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:my_book_finder/src/components/components.dart';
 import 'package:my_book_finder/src/models/book_model.dart';
-import 'package:my_book_finder/src/screens/book_detail_screen.dart';
 import 'package:my_book_finder/src/services/book_api_service.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
 
@@ -95,12 +94,13 @@ class _SearchScreenState extends State<SearchScreen> {
                     top: 200,
                   ),
                   child: Text(
+                    'No Books to show, search for a book',
                     textAlign: TextAlign.center,
-                    'No Books To Show, Search for a Book',
                     style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w600,
-                        color: accentColor),
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: accentColor
+                    ),
                   ),
                 )
               : Expanded(
@@ -135,49 +135,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                   crossAxisSpacing: 25.0),
                           itemBuilder: (context, index) {
                             Item item = snapshot.data!.items[index];
-                            return GestureDetector(
-                              onTap: (() {
-                             navigateTo(context,
-                              BookDetailScreen(
-                               description: item.volumeInfo.description,
-                               authors: item.volumeInfo.authors.toString(),
-                                image: item.volumeInfo.imageLinks?.thumbnail,
-                                title: item.volumeInfo.title,
-                                publisher: item.volumeInfo.publisher,
-                                 publishedDate: item.volumeInfo.publishedDate,
-                                 pageCount: item.volumeInfo.pageCount,
-                                averageRating: item.volumeInfo.averageRating,
-                                previewLink: item.volumeInfo.previewLink,
-                                  ),
-                                 );
-                               }),
-                              child: GridTile(
-                                footer: Container(
-                                  padding: EdgeInsets.all(5),
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: backgroundColor.withOpacity(0.9),
-                                  ),
-                                  height: 40,
-                                  child: Text(
-                                    textAlign: TextAlign.center,
-                                    item.volumeInfo.title,
-                                    style: TextStyle(
-                                        overflow: TextOverflow.ellipsis,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                child: Image.network(
-                                  item.volumeInfo.imageLinks!.thumbnail
-                                      .toString(),
-                                  fit: BoxFit.cover,
-                                  errorBuilder: (context, error, stackTrace) {
-                                    return Placeholder();
-                                  },
-                                ),
-                              ),
-                            );
+                            return buildBookItem(item, context);
                           },
                         );
                       },

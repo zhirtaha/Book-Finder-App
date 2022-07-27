@@ -26,15 +26,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     OnBoardingModel(
         image: 'assets/images/onboard 1.jpg',
         body: 'Find The Books You Like',
-        title: 'My Book Finder'),
+        title: 'Books for Knowledge'),
     OnBoardingModel(
         image: 'assets/images/onboard 2.jpg',
         body: 'The Collection You Will love',
-        title: 'My Book Finder'),
+        title: 'Books are Best for You'),
     OnBoardingModel(
         image: 'assets/images/onboard 3.jpg',
-        body: 'Get The Right Books',
-        title: 'My Book Finder'),
+        body: 'Enjoy a new world inside a book',
+        title: 'The Book Finder'),
   ];
 
   PageController pageController = PageController();
@@ -87,6 +87,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         ),
         Text(
           board.title,
+          textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.headline1,
         ),
         SizedBox(
@@ -132,8 +133,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   });
                 } else {
                   pageController.nextPage(
-                      duration: Duration(milliseconds: 750),
-                      curve: Curves.easeInOut);
+                      duration: Duration(milliseconds: 550),
+                      curve: Curves.ease);
                 }
               },
               child: Icon(Icons.arrow_forward),
