@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_book_finder/src/layout/main_layout.dart';
+import 'package:my_book_finder/src/screens/sign_up_screen.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -24,15 +24,15 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   List boarding = [
     OnBoardingModel(
-        image: 'assets/images/onboard 1.jpg',
+        image: 'assets/images/onboard1.jpg',
         body: 'Find The Books You Like',
         title: 'Books for Knowledge'),
     OnBoardingModel(
-        image: 'assets/images/onboard 2.jpg',
+        image: 'assets/images/onboard2.jpg',
         body: 'The Collection You Will love',
         title: 'Books are Best for You'),
     OnBoardingModel(
-        image: 'assets/images/onboard 3.jpg',
+        image: 'assets/images/onboard3.jpg',
         body: 'Enjoy a new world inside a book',
         title: 'The Book Finder'),
   ];
@@ -113,7 +113,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           children: [
             TextButton(
               onPressed: () {
-                navigateAndFinish(context, MainLayout());
+                navigateAndFinish(context, SignUpScreen());
               },
               child: Text(
                 'Skip',
@@ -129,7 +129,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               onPressed: () {
                 if (isLast) {
                   setState(() {
-                    navigateAndFinish(context, MainLayout());
+                    navigateAndFinish(context, SignUpScreen());
                   });
                 } else {
                   pageController.nextPage(

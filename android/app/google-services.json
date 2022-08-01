@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "268452201321",
+    "project_id": "my-book-finder-fe43a",
+    "storage_bucket": "my-book-finder-fe43a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268452201321:android:967210eafc86399b8bb3f8",
+        "android_client_info": {
+          "package_name": "com.example.my_book_finder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268452201321-jloedjlthah0eko3eh3dl6qr915jni0a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrnbAnZkD4BBd8RrxdCSySIQFzH25K96A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268452201321-jloedjlthah0eko3eh3dl6qr915jni0a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

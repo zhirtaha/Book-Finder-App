@@ -99,7 +99,8 @@ class _SearchScreenState extends State<SearchScreen> {
                         backgroundColor: secondaryColor,
                         shadowColor: secondaryColor,
                         textColor: Colors.white,
-                      )),
+                      ),
+                   ),
                 ],
               ),
               SizedBox(
