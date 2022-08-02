@@ -23,7 +23,7 @@ class _SearchScreenState extends State<SearchScreen> {
   String oB = "relevance";
   List<String> orderByList = ["newest", "relevance"];
   String? filter;
-  String f = 'ebooks';
+  String f = 'partial';
   List<String> filterList = [
     "partial",
     "full",

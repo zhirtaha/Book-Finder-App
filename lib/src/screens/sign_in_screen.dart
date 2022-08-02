@@ -29,7 +29,7 @@ class _SignInScreenState extends State<SignInScreen> {
       body: Form(
         key: formKey,
         child: Container(
-          margin: EdgeInsets.only(top: 55),
+          margin: EdgeInsets.only(top: 25),
           child: Padding(
             padding: const EdgeInsets.all(25.0),
             child: ListView(

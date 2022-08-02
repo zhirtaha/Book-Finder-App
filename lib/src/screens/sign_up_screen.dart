@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_book_finder/src/components/components.dart';
 import 'package:my_book_finder/src/layout/main_layout.dart';
@@ -30,7 +29,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: Form(
         key: formKey,
         child: Container(
-          margin: EdgeInsets.only(top: 55),
+          margin: EdgeInsets.only(top: 25),
           child: Padding(
             padding: const EdgeInsets.all(25.0),
             child: ListView(
