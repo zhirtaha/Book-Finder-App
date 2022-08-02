@@ -136,15 +136,24 @@ class _SignInScreenState extends State<SignInScreen> {
                 SizedBox(
                   height: 20,
                 ),
-                TextButton(
-                  onPressed: () {
-                    navigateAndFinish(context, SignUpScreen());
-                  },
-                  child: Text(
-                    'Don\'t have an account? Sign Up',
-                    style: TextStyle(color: accentColor, fontSize: 15),
-                  ),
-                )
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Don\'t have an account?'),
+                    TextButton(
+                      onPressed: () {
+                        navigateAndFinish(context, SignUpScreen());
+                      },
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(
+                            color: secondaryColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
           ),

@@ -120,7 +120,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         if (response != null) {
                           // ignore: use_build_context_synchronously
                           navigateAndFinish(context, MainLayout());
-                        } 
+                        }
                       }
                     },
                     style: ElevatedButton.styleFrom(
@@ -137,15 +137,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(
                   height: 20,
                 ),
-                TextButton(
-                  onPressed: () {
-                    navigateAndFinish(context, SignInScreen());
-                  },
-                  child: Text(
-                    'Already have an account? Sign In',
-                    style: TextStyle(color: accentColor, fontSize: 15),
-                  ),
-                )
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Alredy have an account?'),
+                    TextButton(
+                      onPressed: () {
+                        navigateAndFinish(context, SignInScreen());
+                      },
+                      child: Text(
+                        'Sign In',
+                        style: TextStyle(
+                            color: secondaryColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
           ),
