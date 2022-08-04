@@ -98,7 +98,7 @@ void navigateTo(context, widget) {
 }
 
 //Navigate and remove previous screen
-void navigateAndFinish(context, widget) {
+void navigateAndRemove(context, widget) {
   Navigator.pushAndRemoveUntil(context,
       MaterialPageRoute(builder: (context) => widget), (route) => false);
 }

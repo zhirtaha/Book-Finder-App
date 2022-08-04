@@ -37,7 +37,7 @@ class _MainLayoutState extends State<MainLayout> {
           IconButton(
               onPressed: () {
                 auth.signOut();
-                navigateAndFinish(context, SignInScreen());
+                navigateAndRemove(context, SignInScreen());
               },
               icon: Icon(
                 Icons.exit_to_app,

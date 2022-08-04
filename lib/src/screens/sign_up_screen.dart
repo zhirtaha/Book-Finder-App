@@ -118,7 +118,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             password: passwordController.text);
                         if (response != null) {
                           // ignore: use_build_context_synchronously
-                          navigateAndFinish(context, MainLayout());
+                          navigateAndRemove(context, MainLayout());
                         }
                       }
                     },
@@ -142,7 +142,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Text('Alredy have an account?'),
                     TextButton(
                       onPressed: () {
-                        navigateAndFinish(context, SignInScreen());
+                        navigateAndRemove(context, SignInScreen());
                       },
                       child: Text(
                         'Sign In',
