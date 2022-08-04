@@ -13,10 +13,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final carouselImages = [
-    'https://m.media-amazon.com/images/I/51Z0nLAfLmL.jpghttps://m.media-amazon.com/images/I/51Z0nLAfLmL.jpg',
-    'https://m.media-amazon.com/images/I/51UU0FLH1wL.jpg',
-    'https://images-na.ssl-images-amazon.com/images/I/81tCtHFtOgL.jpg',
-    'https://images-na.ssl-images-amazon.com/images/I/61M1eEsuSML.jpg'
+    'assets/images/book cover1.jpeg',
+    'assets/images/book cover2.jpeg',
+    'assets/images/book cover3.jpeg',
+    'assets/images/book cover4.jpeg'
   ];
 
   int activeIndex = 0;

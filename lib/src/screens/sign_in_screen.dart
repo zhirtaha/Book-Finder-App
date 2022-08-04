@@ -115,7 +115,9 @@ class _SignInScreenState extends State<SignInScreen> {
                       if (formKey.currentState!.validate()) {
                         var response = await auth.signIn(
                             email: emailController.text,
-                            password: passwordController.text);
+                            password: passwordController.text,
+                            context: context
+                        );
                         if (response != null) {
                           // ignore: use_build_context_synchronously
                           navigateAndRemove(context, MainLayout());

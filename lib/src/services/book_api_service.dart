@@ -4,7 +4,7 @@ import 'package:my_book_finder/src/models/book_model.dart';
 class BookService {
   static Future<BookModel> getBooks() async {
     var url =
-        'https://www.googleapis.com/books/v1/volumes?q=The&maxResults=6&orderBy=newest';
+        'https://www.googleapis.com/books/v1/volumes?q=bird&maxResults=10&orderBy=newest';
     final res = await http.get(Uri.parse(url));
     final responseBody = res.body;
     BookModel bookModel = bookModelFromJson(responseBody);

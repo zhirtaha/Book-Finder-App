@@ -57,7 +57,7 @@ Widget buildCarouselImageItems(String carouselImage, int index) {
     width: 360,
     margin: EdgeInsets.symmetric(horizontal: 5),
     color: Colors.grey,
-    child: Image.network(
+    child: Image.asset(
       carouselImage,
       fit: BoxFit.cover,
     ),
@@ -102,3 +102,4 @@ void navigateAndRemove(context, widget) {
   Navigator.pushAndRemoveUntil(context,
       MaterialPageRoute(builder: (context) => widget), (route) => false);
 }
+

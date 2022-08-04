@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_book_finder/src/components/components.dart';
-import 'package:my_book_finder/src/layout/main_layout.dart';
 import 'package:my_book_finder/src/screens/sign_in_screen.dart';
 import 'package:my_book_finder/src/services/auth_service.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
@@ -115,10 +114,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       if (formKey.currentState!.validate()) {
                         var response = await auth.signUp(
                             email: emailController.text,
-                            password: passwordController.text);
+                            password: passwordController.text,
+                            context: context
+                        );
                         if (response != null) {
                           // ignore: use_build_context_synchronously
-                          navigateAndRemove(context, MainLayout());
+                          navigateAndRemove(context, SignInScreen());
                         }
                       }
                     },
