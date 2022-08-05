@@ -41,16 +41,14 @@ class MainLayout extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
               label: 'Home',
-              // ignore: deprecated_member_use
-              icon: FaIcon(FontAwesomeIcons.home)),
+              icon: FaIcon(FontAwesomeIcons.house)),
           BottomNavigationBarItem(
               label: 'Books', icon: FaIcon(FontAwesomeIcons.book)),
           BottomNavigationBarItem(
               label: 'Categories', icon: FaIcon(FontAwesomeIcons.list)),
           BottomNavigationBarItem(
               label: 'Search',
-              // ignore: deprecated_member_use
-              icon: FaIcon(FontAwesomeIcons.search)),
+              icon: FaIcon(FontAwesomeIcons.searchengin)),
         ],
       ),
       body:Provider.of<MyProvider>(context).bottomNavItems[ Provider.of<MyProvider>(context).currentIndex] ,
