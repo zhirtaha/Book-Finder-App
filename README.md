@@ -1,6 +1,6 @@
 # My Book Finder
 
-A simple Book Search application using Flutter.
+A Book Search application using Flutter.
 
 ## Project Description
 

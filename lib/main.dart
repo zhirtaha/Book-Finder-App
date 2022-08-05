@@ -17,5 +17,7 @@ void main() async {
   } else {
     isLogin = true;
   }
-  runApp(MyApp(isLogin: isLogin,));
+  runApp(MyApp(
+    isLogin: isLogin,
+  ));
 }
