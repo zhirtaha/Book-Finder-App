@@ -1,30 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_book_finder/src/components/components.dart';
-import 'package:my_book_finder/src/screens/books_list_screen.dart';
-import 'package:my_book_finder/src/screens/home_screen.dart';
-import 'package:my_book_finder/src/screens/categories_screen.dart';
-import 'package:my_book_finder/src/screens/search_screen.dart';
+import 'package:my_book_finder/src/providers/my_provider.dart';
 import 'package:my_book_finder/src/screens/sign_in_screen.dart';
 import 'package:my_book_finder/src/services/auth_service.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
+import 'package:provider/provider.dart';
 
-class MainLayout extends StatefulWidget {
-  const MainLayout({Key? key}) : super(key: key);
+// ignore: must_be_immutable
+class MainLayout extends StatelessWidget {
+  MainLayout({Key? key}) : super(key: key);
 
-  @override
-  State<MainLayout> createState() => _MainLayoutState();
-}
-
-class _MainLayoutState extends State<MainLayout> {
-  int currentIndex = 0;
-  List bottomNavItems = [
-    HomeScreen(),
-    BooksListScreen(),
-    CategoriesScreen(),
-    SearchScreen(),
-  ];
   Auth auth = Auth();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,11 +34,9 @@ class _MainLayoutState extends State<MainLayout> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
+        currentIndex:  Provider.of<MyProvider>(context).currentIndex ,
         onTap: (int index) {
-          setState(() {
-            currentIndex = index;
-          });
+          Provider.of<MyProvider>(context,listen: false).changeBottomNavItems(index);
         },
         items: [
           BottomNavigationBarItem(
@@ -67,7 +53,7 @@ class _MainLayoutState extends State<MainLayout> {
               icon: FaIcon(FontAwesomeIcons.search)),
         ],
       ),
-      body: bottomNavItems[currentIndex],
+      body:Provider.of<MyProvider>(context).bottomNavItems[ Provider.of<MyProvider>(context).currentIndex] ,
     );
   }
 }
