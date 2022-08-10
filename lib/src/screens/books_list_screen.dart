@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:my_book_finder/src/components/components.dart';
 import 'package:my_book_finder/src/models/book_model.dart';
 import 'package:my_book_finder/src/services/book_api_service.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
+import 'package:my_book_finder/src/widgets/widgets.dart';
 
 class BooksListScreen extends StatelessWidget {
   const BooksListScreen({Key? key}) : super(key: key);

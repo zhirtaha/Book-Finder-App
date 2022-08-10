@@ -9,7 +9,7 @@ A Flutter application for those who like books. In this app users can find and s
 ## Features
 
 - Using API
-- Authentication (Sign In and Sign Up)
+- Authentication (Sign In and Sign Up), using Firebase Authentication
 - Users can search for a book by (title, author,....etc)
 - Users can search for book by book subjects
 - List of Books based on a user's search

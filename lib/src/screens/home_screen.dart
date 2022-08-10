@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:my_book_finder/src/components/components.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
+import 'package:my_book_finder/src/widgets/widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_book_finder/src/components/components.dart';
 import 'package:my_book_finder/src/screens/books_by_category_screen.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
+import 'package:my_book_finder/src/widgets/widgets.dart';
 
 class CategoriesModel {
   String image;

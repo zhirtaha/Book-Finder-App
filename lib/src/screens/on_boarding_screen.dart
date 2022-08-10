@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_book_finder/src/screens/sign_up_screen.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
+import 'package:my_book_finder/src/widgets/widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-import '../components/components.dart';
 
 class OnBoardingModel {
   final String image;

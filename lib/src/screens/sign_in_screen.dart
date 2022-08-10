@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_book_finder/src/components/components.dart';
 import 'package:my_book_finder/src/layout/main_layout.dart';
 import 'package:my_book_finder/src/screens/sign_up_screen.dart';
 import 'package:my_book_finder/src/services/auth_service.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
+import 'package:my_book_finder/src/widgets/widgets.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
