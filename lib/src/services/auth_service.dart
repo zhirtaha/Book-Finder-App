@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Auth {
   final auth = FirebaseAuth.instance;
@@ -14,20 +14,21 @@ class Auth {
       return userCredential;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('The Password is Weak')
-            )
+        Get.snackbar(
+          'Error',
+          'The Password is weak'
         );
       } else if (e.code == 'email-already-in-use') {
-       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Email already in use')
-            )
+        Get.snackbar(
+          'Error',
+          'Email already in use'
         );
       }
     } catch (e) {
-      print(e);
+      Get.snackbar(
+          'Error',
+          e.toString()
+        );
     }
   }
 
@@ -39,20 +40,21 @@ class Auth {
       return userCredential;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('User Not Found for that email')
-            )
+        Get.snackbar(
+          'Error',
+          'User Not found for that email'
         );
       } else if (e.code == 'wrong-password') {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Wrong password provided for that email')
-          )
+        Get.snackbar(
+          'Error',
+          'Wrong password provided for that email'
         );
       }
     } catch (e) {
-      print(e);
+      Get.snackbar(
+          'Error',
+          e.toString()
+        );
     }
   }
 

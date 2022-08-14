@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_book_finder/src/models/book_model.dart';
 import 'package:my_book_finder/src/screens/book_detail_screen.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
+
+
 //build book item
 Widget buildBookItem(Item item,BuildContext context) 
 {
