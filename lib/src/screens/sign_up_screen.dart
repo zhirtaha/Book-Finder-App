@@ -15,6 +15,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
 
   Auth auth = Auth();
 
@@ -46,6 +47,36 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 20),
+                TextFormField(
+                  controller: nameController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Name Must Not be Empty';
+                    }
+                    return null;
+                  },
+                  keyboardType: TextInputType.name,
+                  cursorColor: secondaryColor,
+                  decoration: InputDecoration(
+                      hintText: 'Enter Your Name',
+                      prefixIcon: Icon(
+                        Icons.person,
+                        color: secondaryColor,
+                      ),
+                      fillColor: Colors.grey[150],
+                      focusColor: secondaryColor,
+                      filled: true,
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: secondaryColor,
+                          ),
+                          borderRadius: BorderRadius.circular(10)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10))),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
                 TextFormField(
                   controller: emailController,
                   validator: (value) {
@@ -115,7 +146,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         var response = await auth.signUp(
                             email: emailController.text,
                             password: passwordController.text,
-                            context: context
+                            name: nameController.text
                         );
                         if (response != null) {
                           // ignore: use_build_context_synchronously

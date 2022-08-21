@@ -133,7 +133,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 } else {
                   pageController.nextPage(
                       duration: Duration(milliseconds: 550),
-                      curve: Curves.ease);
+                      curve: Curves.decelerate);
                 }
               },
               child: Icon(Icons.arrow_forward),

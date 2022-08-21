@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_book_finder/src/layout/main_layout.dart';
 import 'package:my_book_finder/src/providers/my_provider.dart';
 import 'package:my_book_finder/src/screens/on_boarding_screen.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
           create: (context) => MyProvider()
         )
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
         title: 'My Book finder',
         theme: lightTheme,
         themeMode: ThemeMode.dark,
