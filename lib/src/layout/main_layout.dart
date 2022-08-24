@@ -18,6 +18,7 @@ class MainLayout extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           'My Book Finder',
         ),

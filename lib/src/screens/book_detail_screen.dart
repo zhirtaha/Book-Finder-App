@@ -30,6 +30,7 @@ class BookDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           foregroundColor: accentColor,
           title: Text('Book Detail'),
         ),

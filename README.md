@@ -17,6 +17,22 @@ A Flutter application for those who like books. In this app users can find and s
 - Book Details like (title, description,author,......etc)
 - Users can preview the book on a webview
 
+## Technologies
+
+- http
+- provider
+- font_awesome_flutter
+- smooth_page_indicator
+- carousel_slider
+- flutter_spinkit
+- hexcolor
+- webview_flutter
+- firebase_core
+- firebase_auth
+- cloud_firestore
+- get
+- flutter_native_splash
+
 ## Setup
 
 To run this project you can follow these steps

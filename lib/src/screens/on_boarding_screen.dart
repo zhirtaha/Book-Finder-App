@@ -105,7 +105,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           count: boarding.length,
         ),
         SizedBox(
-          height: 90,
+          height: 70,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

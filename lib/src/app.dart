@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         title: 'My Book finder',
         theme: lightTheme,
-        themeMode: ThemeMode.dark,
         debugShowCheckedModeBanner: false,
         home: isLogin == false ? OnBoardingScreen() : MainLayout(),
       ),
