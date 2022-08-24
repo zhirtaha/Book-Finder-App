@@ -68,52 +68,107 @@ class BookDetailScreen extends StatelessWidget {
                         SizedBox(
                           height: 10,
                         ),
-                        Text(
-                          'Author : $authors',
+                        Text.rich(
+                         TextSpan(
+                          text: 'Author : ',
                           style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: accentColor),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold
+                          ),
+                          children: <InlineSpan>[
+                            TextSpan(
+                              text: authors,
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                              )
+                            )
+                          ],
+                         ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text(
-                          'Publisher: $publisher',
+                        Text.rich(
+                         TextSpan(
+                          text: 'Publisher : ',
                           style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w500,
-                              color: accentColor),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold
+                          ),
+                          children: <InlineSpan>[
+                            TextSpan(
+                              text: publisher,
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                              )
+                            )
+                          ],
+                         ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text(
-                          'Published Date: $publishedDate',
+                        Text.rich(
+                         TextSpan(
+                          text: 'Published Date: ',
                           style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w500,
-                              color: accentColor),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold
+                          ),
+                          children: <InlineSpan>[
+                            TextSpan(
+                              text: publishedDate,
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                              )
+                            )
+                          ],
+                         ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text(
-                          'number of Pages: $pageCount',
+                        Text.rich(
+                         TextSpan(
+                          text: 'Number of Pages : ',
                           style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w500,
-                              color: accentColor),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold
+                          ),
+                          children: <InlineSpan>[
+                            TextSpan(
+                              text: pageCount.toString(),
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                              )
+                            )
+                          ],
+                         ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text(
-                          'Average Rating: $averageRating',
+                        Text.rich(
+                         TextSpan(
+                          text: 'Average Rating : ',
                           style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w500,
-                              color: accentColor),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold
+                          ),
+                          children: <InlineSpan>[
+                            TextSpan(
+                              text: averageRating.toString(),
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500
+                              )
+                            )
+                          ],
+                         ),
                         ),
                       ],
                     ),
@@ -163,9 +218,12 @@ class BookDetailScreen extends StatelessWidget {
                         navigateTo(context, WebViewScreen(url: previewLink));
                         return null;
                       },
-                      text: 'Preview')),
+                      text: 'Preview'
+                    )
+                ),
             ],
           ),
-        ));
+        )
+    );
   }
 }
