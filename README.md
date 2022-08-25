@@ -31,6 +31,7 @@ A Flutter application for those who like books. In this app users can find and s
 - firebase_auth
 - cloud_firestore
 - get
+- cached_network_image
 - flutter_native_splash
 
 ## Setup

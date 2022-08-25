@@ -18,6 +18,16 @@ class _SignInScreenState extends State<SignInScreen> {
   TextEditingController passwordController = TextEditingController();
 
   Auth auth = Auth();
+
+  bool isLoading = false;
+
+  @override
+  void dispose() {
+    super.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,38 +117,50 @@ class _SignInScreenState extends State<SignInScreen> {
                 SizedBox(
                   height: 20,
                 ),
-                Container(
-                  padding: EdgeInsets.all(0),
-                  height: 50,
-                  child: ElevatedButton(
-                    onPressed: () async {
-                      if (formKey.currentState!.validate()) {
-                        var response = await auth.signIn(
-                            email: emailController.text,
-                            password: passwordController.text,
-                        );
-                        if (response != null) {
-                          // ignore: use_build_context_synchronously
-                          navigateAndRemove(context, MainLayout());
-                        } 
-                      }
-                    },
-                    style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.all(16),
-                        shadowColor: secondaryColor,
-                        textStyle: TextStyle(fontWeight: FontWeight.bold),
-                        primary: secondaryColor,
-                        onPrimary: Colors.white,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15))),
-                    child: Text('Sign In'),
-                  ),
-                ),
+                isLoading
+                    ? Center(child: CircularProgressIndicator(
+                      color: accentColor,
+                    ))
+                    : Container(
+                        padding: EdgeInsets.all(0),
+                        height: 50,
+                        child: ElevatedButton(
+                          onPressed: () async {
+                            setState(() {
+                              isLoading = true;
+                            });
+                            if (formKey.currentState!.validate()) {
+                              var response = await auth.signIn(
+                                email: emailController.text,
+                                password: passwordController.text,
+                              );
+                              if (response != null) {
+                                // ignore: use_build_context_synchronously
+                                navigateAndRemove(context, MainLayout());
+                              }
+                            }
+                            setState(() {
+                              isLoading = false;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.all(16),
+                              shadowColor: secondaryColor,
+                              textStyle: TextStyle(fontWeight: FontWeight.bold),
+                              primary: secondaryColor,
+                              onPrimary: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15))),
+                          child: Text('Sign In'),
+                        ),
+                      ),
                 SizedBox(
                   height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.ideographic,
                   children: [
                     Text('Don\'t have an account?'),
                     TextButton(

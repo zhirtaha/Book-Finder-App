@@ -30,7 +30,8 @@ class BooksListScreen extends StatelessWidget {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 25.0,
-                crossAxisSpacing: 25.0),
+                crossAxisSpacing: 25.0
+                ),
             itemBuilder: (context, index) {
               Item item = snapshot.data.items[index];
               return buildBookItem(item,context);

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_book_finder/src/screens/web_view_screen.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
 import 'package:my_book_finder/src/widgets/widgets.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
 class BookDetailScreen extends StatelessWidget {
   const BookDetailScreen({
     Key? key,
@@ -43,11 +43,12 @@ class BookDetailScreen extends StatelessWidget {
                 children: [
                   Container(
                     margin: EdgeInsets.only(top: 45),
-                    child: Image.network(
-                      image!,
-                      errorBuilder: (context, error, stackTrace) {
-                        return Text('No Image');
-                      },
+                    child: CachedNetworkImage(
+                      imageUrl: image!,
+                      placeholder: (context, url) => Center(child: CircularProgressIndicator(
+                        color: accentColor,
+                      )),
+                      errorWidget: (context, url, error) => Icon(Icons.error),
                     ),
                   ),
                   SizedBox(

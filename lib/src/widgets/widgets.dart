@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_book_finder/src/models/book_model.dart';
 import 'package:my_book_finder/src/screens/book_detail_screen.dart';
 import 'package:my_book_finder/src/styles/colors/colors.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 
 //build book item
@@ -41,13 +42,15 @@ Widget buildBookItem(Item item,BuildContext context)
               fontWeight: FontWeight.bold),
         ),
       ),
-      child: Image.network(
-        item.volumeInfo.imageLinks!.thumbnail.toString(),
-        fit: BoxFit.cover,
-        errorBuilder: (context, error, stackTrace) {
-          return Placeholder();
-        },
-      ),
+      child: CachedNetworkImage(
+        imageUrl: item.volumeInfo.imageLinks!.thumbnail.toString(),
+        placeholder: (context, url) => Center(
+          child: CircularProgressIndicator(
+            color: accentColor,
+          ),
+        ),
+        errorWidget: (context, url, error) => Icon(Icons.error),
+      )
     ),
   );
 }

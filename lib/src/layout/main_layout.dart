@@ -12,7 +12,6 @@ class MainLayout extends StatelessWidget {
   MainLayout({Key? key}) : super(key: key);
 
   Auth auth = Auth();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,24 +34,24 @@ class MainLayout extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex:  Provider.of<MyProvider>(context).currentIndex ,
+        currentIndex: Provider.of<MyProvider>(context).currentIndex,
         onTap: (int index) {
-          Provider.of<MyProvider>(context,listen: false).changeBottomNavItems(index);
+          Provider.of<MyProvider>(context, listen: false)
+              .changeBottomNavItems(index);
         },
         items: [
           BottomNavigationBarItem(
-              label: 'Home',
-              icon: FaIcon(FontAwesomeIcons.house)),
+              label: 'Home', icon: FaIcon(FontAwesomeIcons.house)),
           BottomNavigationBarItem(
               label: 'Books', icon: FaIcon(FontAwesomeIcons.book)),
           BottomNavigationBarItem(
               label: 'Categories', icon: FaIcon(FontAwesomeIcons.list)),
           BottomNavigationBarItem(
-              label: 'Search',
-              icon: FaIcon(FontAwesomeIcons.searchengin)),
+              label: 'Search', icon: FaIcon(FontAwesomeIcons.searchengin)),
         ],
       ),
-      body:Provider.of<MyProvider>(context).bottomNavItems[ Provider.of<MyProvider>(context).currentIndex] ,
+      body: Provider.of<MyProvider>(context)
+          .bottomNavItems[Provider.of<MyProvider>(context).currentIndex],
     );
   }
 }

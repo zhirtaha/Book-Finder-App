@@ -3,12 +3,12 @@ import 'package:my_book_finder/src/models/book_model.dart';
 
 class BookService {
   static Future<BookModel> getBooks() async {
-      var url =
-          'https://www.googleapis.com/books/v1/volumes?q=bird&maxResults=10&orderBy=newest';
-      final res = await http.get(Uri.parse(url));
-      final responseBody = res.body;
-      BookModel bookModel = bookModelFromJson(responseBody);
-      return bookModel;
+    var url =
+        'https://www.googleapis.com/books/v1/volumes?q=bird&maxResults=20&orderBy=newest';
+    final res = await http.get(Uri.parse(url));
+    final responseBody = res.body;
+    BookModel bookModel = bookModelFromJson(responseBody);
+    return bookModel;
   }
 
   static Future<BookModel> getBooksBySearch(
@@ -21,11 +21,11 @@ class BookService {
       return bookModel;
   }
 
-  static Future<BookModel> getBooksBySubject(String subject) async {
+  static Future<BookModel> getBooksBySubject(String subject) async { 
       var url = 'https://www.googleapis.com/books/v1/volumes?q=subect:$subject';
       final res = await http.get(Uri.parse(url));
       final responseBody = res.body;
       BookModel bookModel = bookModelFromJson(responseBody);
       return bookModel;
-    } 
+  }
 }
