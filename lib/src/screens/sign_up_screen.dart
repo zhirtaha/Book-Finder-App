@@ -161,8 +161,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             });
                             if (formKey.currentState!.validate()) {
                               var response = await auth.signUp(
-                                  email: emailController.text,
-                                  password: passwordController.text,
+                                  email: emailController.text.trim(),
+                                  password: passwordController.text.trim(),
                                   name: nameController.text);
                               if (response != null) {
                                 // ignore: use_build_context_synchronously
