@@ -43,7 +43,7 @@ A Flutter application for those who like books. In this app users can find and s
 <img src="https://user-images.githubusercontent.com/91600295/187027650-a7a85596-0d5d-439b-b4ee-5abdb8021b0b.png"  width="200" />
 <img src="https://user-images.githubusercontent.com/91600295/187027666-4e4441e2-f129-4871-a65f-caa66d2dd6f8.png"  width="200" />
 <img src="https://user-images.githubusercontent.com/91600295/187027713-d22ac0a8-940b-4b13-958f-ff70d4552d80.png"  width="200" />
-<img src="https://user-images.githubusercontent.com/91600295/187027736-50e3859f-c5e1-4248-8ff1-4797f0cf5aa7.png"  width="200" />
+<img src="https://user-images.githubusercontent.com/91600295/187028905-a7ec0dd9-08f7-4959-924a-c6b61d279f78.png"  width="200" />
 <img src="https://user-images.githubusercontent.com/91600295/187027760-b9ccc16b-40c5-4136-b891-1426793d2249.png"  width="200" />
 
 ## Setup

@@ -18,9 +18,9 @@ class CategoriesScreen extends StatelessWidget {
 
   List<CategoriesModel> categoriesModel = [
     CategoriesModel(image: 'assets/images/art.png', title: 'DESIGN'),
-    CategoriesModel(image: 'assets/images/criticism.png', title: 'CRITICISM'),
+    CategoriesModel(image: 'assets/images/poetry.png', title: 'POETRY'),
     CategoriesModel(image: 'assets/images/history.png', title: 'HISTORY'),
-    CategoriesModel(image: 'assets/images/law.png', title: 'LAW'),
+    CategoriesModel(image: 'assets/images/sport.png', title: 'SPORTS'),
     CategoriesModel(image: 'assets/images/music.png', title: 'MUSIC'),
   ];
 
