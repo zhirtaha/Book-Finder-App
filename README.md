@@ -36,8 +36,6 @@ A Flutter application for those who like books. In this app users can find and s
 
 ## Screenshots
 
-![Screenshot_1661596568](https://user-images.githubusercontent.com/91600295/187027303-e48fb594-4171-46ac-892c-1f809668595f.png)
-
 ## Setup
 
 To run this project you can follow these steps
