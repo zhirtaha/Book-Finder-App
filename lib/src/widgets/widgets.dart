@@ -61,10 +61,16 @@ Widget buildCarouselImageItems(String carouselImage, int index) {
     width: 360,
     margin: EdgeInsets.symmetric(horizontal: 5),
     color: Colors.grey,
-    child: Image.asset(
-      carouselImage,
+    child: CachedNetworkImage(
       fit: BoxFit.cover,
-    ),
+        imageUrl: carouselImage,
+        placeholder: (context, url) => Center(
+          child: CircularProgressIndicator(
+            color: accentColor,
+          ),
+        ),
+        errorWidget: (context, url, error) => Icon(Icons.error),
+      )
   );
 }
 
