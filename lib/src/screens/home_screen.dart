@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int activeIndex = 0;
   CarouselController carouselController = CarouselController();
-
+  
   @override
   Widget build(BuildContext context) {
     return Container(
