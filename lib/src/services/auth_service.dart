@@ -23,7 +23,7 @@ class Auth {
       } else if (e.code == 'email-already-in-use') {
         Get.snackbar(
           'Error',
-          'Email already in use'
+          'Wrong credential provided'
         );
       }
     } catch (e) {
