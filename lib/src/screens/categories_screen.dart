@@ -20,7 +20,7 @@ class CategoriesScreen extends StatelessWidget {
     CategoriesModel(image: 'assets/images/art.png', title: 'DESIGN'),
     CategoriesModel(image: 'assets/images/poetry.png', title: 'POETRY'),
     CategoriesModel(image: 'assets/images/history.png', title: 'HISTORY'),
-    CategoriesModel(image: 'assets/images/sport.png', title: 'SPORTS'),
+    CategoriesModel(image: 'assets/images/planet.png', title: 'NATURE'),
     CategoriesModel(image: 'assets/images/music.png', title: 'MUSIC'),
   ];
 
